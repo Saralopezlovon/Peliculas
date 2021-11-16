@@ -1,7 +1,10 @@
+// const dataFilm = require ('../utils/film')
+
 const film = {
     
     getSearch: (req,res)=>{
         console.log("*****ESTA ES LA HOME**************");
+        console.log(req.query.body)
         res.render('home', {search:"películas"})       
 
     },
