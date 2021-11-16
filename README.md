@@ -1,2 +1,2 @@
 # Peliculas
-Ejercicio sobre Server Render con Express + Pug
+Ejercicio - Server Render con Express + Pug
