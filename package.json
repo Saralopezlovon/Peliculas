@@ -1,0 +1,24 @@
+{
+  "name": "peliculas",
+  "version": "1.0.0",
+  "description": "Ejercicio - Server Render con Express + Pug",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saralopezlovon/Peliculas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Saralopezlovon/Peliculas/issues"
+  },
+  "homepage": "https://github.com/Saralopezlovon/Peliculas#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.6"
+  }
+}
