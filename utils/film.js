@@ -1,24 +1,19 @@
-const film = {
+const fetch = require('node-fetch');   
     
-    // getSearch: async ()=>{
-    //     const data = await fetch('https://fakestoreapi.com/products',{
-    //         method:"POST",
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body:JSON.stringify(product)
-    //     })
-    //     const res = await data.json()
-    //     return res       
+const getFilm = async (title) =>{
+    
+    const data = await fetch(`http://www.omdbapi.com/?t=${title}&apikey=e8f1e353`);
+    const film = await data.json();
 
-    // },
-
-    getFilm: async ()=>{
-        const data = await fetch('http://www.omdbapi.com/?i=tt3896198&apikey=e8f1e353');
-        const film = await data.json();
-        console.log(film)
-        //   return film
+    const filmNew = {
+        titulo: film.Title,
+        director: film.Director,
+        descripcion: film.Plot,
+        imagen: film.Poster
     }
+    
+    return filmNew
 }
 
-module.exports = film;
+
+module.exports = getFilm;

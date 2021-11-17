@@ -1,13 +1,13 @@
 const express = require('express');
-const film = require('./controllers/film') 
-// const filmSearch = require('.public/scripts/scriptHome') //Intento extraer info del script
+const film = require('./controllers/film')
 const app = express();
 const port = 3000;
 
 app.use(express.json()) // Para habilitar envio de JSON al servidor
+app.use(express.urlencoded({ extended: false }));
 
 app.set('view engine', 'pug');
-app.set('views','./views');
+app.set('views', './views');
 
 app.use(express.static('public'))
 
@@ -21,10 +21,12 @@ app.get('/', film.getSearch);
 
 app.get('/film/:title', film.getFilm);
 
+app.post('/', film.getInfoSearch)
+
 
 
 //LISTEN
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
-  })
+  console.log(`Example app listening at http://localhost:${port}`)
+})
